@@ -355,6 +355,9 @@ class GCE_Display {
 			$day_markup = '';
 
 			foreach ( $event_day as $num_in_day => $event ) {
+				if ( $day_markup != '' ) {
+				    $day_markup .= '</div><div class="gce-event-day">';
+				}
 				//Create the markup for this event
 				if( ( $max_length != 'events' && (( $event->start_time >= $start &&       // Condition for limited by days
 				                                    $event->end_time   <= $end_time ) ||
