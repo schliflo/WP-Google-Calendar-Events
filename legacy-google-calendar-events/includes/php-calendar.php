@@ -42,8 +42,9 @@ function gce_generate_calendar( $year, $month, $days = array(), $day_name_length
 	$title = esc_html( $month_name ) . '&nbsp;' . $year;  #note that some locales don't capitalize month and day names
 
 	#Begin calendar. Uses a real <caption>. See http://diveintomark.org/archives/2002/07/03
-	list( $p, $pl ) = each( $pn );
-	list( $n, $nl ) = each( $pn ); #previous and next links, if applicable
+	list( $p, $pl ) = array( key($pn), current($pn) );
+	next($pn);
+	list( $n, $nl ) = array( key($pn), current($pn) ); #previous and next links, if applicable
 	
 	// Previous filter
 	$p = apply_filters( 'gce_prev_text', $p );
