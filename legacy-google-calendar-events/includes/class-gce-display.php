@@ -294,7 +294,7 @@ class GCE_Display {
 
 		$i = 1;
 
-		$feeds = implode( $this->id, '-' );
+		$feeds = implode( '-', $this->id );
 
 		$markup = '<div class="gce-list" data-gce-start-offset="' . esc_attr( $start_offset ) . '" data-gce-start="' . esc_attr( ( $start + $paging_interval ) ) . '" data-gce-paging-interval="' . esc_attr( $paging_interval ) . '" data-gce-paging="' . esc_attr( $paging ) . '" data-gce-feeds="' . esc_attr( $feeds ) . '" data-gce-title="' . esc_attr( stripslashes( $this->title ) ) . '" data-gce-grouped="' . esc_attr( $grouped ) . '" data-gce-sort="' . esc_attr( $this->sort ) . '">' . "\n";
 
